@@ -17,7 +17,7 @@ manifest:
   projects:
     - name: zephyr
       remote: upstream
-      revision: main
+      revision: 5fc96ff9d70f7828b5eada42de04c521cd0904e1
       import:
         name-allowlist:
           - cmsis
@@ -25,13 +25,9 @@ manifest:
           - segger
           - tinycrypt
           - loramac-node
-    - name: mbedtls
-      revision: master
-      path: modules/crypto/mbedtls
-      groups:
-        - crypto
+          - mbedtls
     - name: mcuboot
-      revision: main
+      revision: b994ba2ce29425587957dcbb6c96d4e1872b5737
       path: bootloader/mcuboot
     - name: zcbor
       revision: 0.6.0
