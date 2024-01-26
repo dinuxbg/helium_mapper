@@ -57,7 +57,7 @@ struct s_lorawan_config lorawan_config = {
 	.app_eui = { 0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07 },
 	.app_key = { 0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0A, 0x0B, 0x0C, 0x0D, 0x0E, 0x0F },
 	.lora_mode = LORAWAN_ACT_OTAA,
-	.data_rate = LORAWAN_DR_3,
+	.data_rate = LORAWAN_DR_5,
 	.lora_class = LORAWAN_CLASS_A,
 	.confirmed_msg = LORAWAN_MSG_UNCONFIRMED,
 	.app_port = 2,
@@ -70,7 +70,7 @@ struct s_lorawan_config lorawan_config = {
 	/* max join sessions before give up and reboot. 20 * 5 = 100 join attempts */
 	.max_join_retry_sessions_count = 20,
 	/* max join session interval in sec */
-	.join_try_interval = 300,
+	.join_try_interval = 3600,
 	.max_inactive_time_window = 3 * 3600,
 	.max_failed_msg = 120,
 #if IS_ENABLED(CONFIG_PAYLOAD_ENCRYPTION)
@@ -95,7 +95,7 @@ struct s_status lorawan_status = {
 
 struct s_mapper_data mapper_data;
 
-#define LORA_JOIN_THREAD_STACK_SIZE 1500
+#define LORA_JOIN_THREAD_STACK_SIZE 2500
 #define LORA_JOIN_THREAD_PRIORITY 10
 K_KERNEL_STACK_MEMBER(lora_join_thread_stack, LORA_JOIN_THREAD_STACK_SIZE);
 
