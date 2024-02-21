@@ -82,7 +82,3 @@
 &slot1_partition {
 	reg = <0x00082000 0x00072000>;
 };
-
-&lora {
-	tcxo-power-startup-delay-ms = <15>;
-};
