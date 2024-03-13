@@ -62,7 +62,6 @@ struct max7q_config {
 
 /** @brief GPS UART configuration. */
 static const struct uart_config uart_config = {
-	//.baudrate = 9600U,
 	.baudrate = DT_PROP(DT_BUS(DT_ALIAS(gps0)), current_speed),
 	.data_bits = UART_CFG_DATA_BITS_8,
 	.flow_ctrl = UART_CFG_FLOW_CTRL_NONE,

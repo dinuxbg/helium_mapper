@@ -17,7 +17,7 @@ manifest:
   projects:
     - name: zephyr
       remote: upstream
-      revision: 5fc96ff9d70f7828b5eada42de04c521cd0904e1
+      revision: main
       import:
         name-allowlist:
           - cmsis
@@ -27,7 +27,7 @@ manifest:
           - loramac-node
           - mbedtls
     - name: mcuboot
-      revision: b994ba2ce29425587957dcbb6c96d4e1872b5737
+      revision: main
       path: bootloader/mcuboot
     - name: zcbor
       revision: 0.6.0
