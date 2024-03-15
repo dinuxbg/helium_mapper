@@ -631,6 +631,14 @@ int init_lora(struct s_helium_mapper_ctx *ctx) {
 		return -ENODEV;
 	}
 
+#if 0 //TODO
+	ret = lorawan_set_region(LORAWAN_REGION_EU868);
+	if (ret < 0) {
+		LOG_ERR("lorawan_set_region failed: %d", ret);
+		return ret;
+	}
+#endif
+
 	ret = lorawan_start();
 	if (ret < 0) {
 		LOG_ERR("lorawan_start failed: %d", ret);
@@ -965,17 +973,18 @@ int main(void)
 		goto fail;
 	}
 
-#if IS_ENABLED(CONFIG_UBLOX_MAX7Q)
+#if 1
+//#if IS_ENABLED(CONFIG_UBLOX_MAX7Q)
 	ret = init_gps();
 	if (ret) {
 		LOG_ERR("init_gps failed");
-		goto fail;
+		//goto fail;
 	}
 
 	ret = gps_set_trigger_handler(gps_trigger_handler);
 	if (ret) {
 		LOG_ERR("gps_set_trigger_handler  failed");
-		goto fail;
+		//goto fail;
 	}
 #endif
 

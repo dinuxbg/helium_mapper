@@ -3,7 +3,6 @@
 
 config UBLOX_MAX7Q
        bool "u-blox max-7q gps driver"
-       select UART_USE_RUNTIME_CONFIGURE
        help
          Enable driver for u-blox max-7q gps module
 
